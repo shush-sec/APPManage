@@ -15,7 +15,7 @@ public class ThirdAPKActivity extends AppCompatActivity {
         setContentView(R.layout.activity_third_apk);
 
         GetAppsinfo getAppsinfo = new GetAppsinfo(this);
-        mAppsInfoList =  getAppsinfo.filterApp(1);
+        mAppsInfoList =  getAppsinfo.filterApp(2);
 
         APPManageAdapter adapter = new APPManageAdapter(this,mAppsInfoList);
         ListView listView = (ListView) findViewById(R.id.list_third_apk);

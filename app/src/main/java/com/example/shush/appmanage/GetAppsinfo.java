@@ -40,7 +40,7 @@ public class GetAppsinfo {
                 break;
             case FILTER_SYSTEM_APP:
                 for (ApplicationInfo applicationInfo : applicationInfos) {
-                    if (applicationInfo.flags == ApplicationInfo.FLAG_SYSTEM)
+                    if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) >0)
                         getApkInfo(applicationInfo);
                 }
                 break;
@@ -48,7 +48,7 @@ public class GetAppsinfo {
                 for (ApplicationInfo applicationInfo : applicationInfos) {
                     if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) <= 0)
                         getApkInfo(applicationInfo);
-                    else if((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0)
+                    else if((applicationInfo.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0)
                         getApkInfo(applicationInfo);
                 }
                 break;
@@ -69,7 +69,7 @@ public class GetAppsinfo {
         mAppsInfoList.add(appInfo);
     }
 
-    private void unInstall(String strPkgName) {
+    public void unInstall(String strPkgName) {
         Intent intent = new Intent(Intent.ACTION_DELETE);
         intent.setData(Uri.parse("package:" + strPkgName));
         mContext.startActivity(intent);

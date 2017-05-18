@@ -7,10 +7,10 @@ import android.graphics.drawable.Drawable;
  */
 
 public class AppInfo {
-    String strApkName;      //应用程序名
-    String strPkgName ;     //包名
-    Drawable    drIcon;     //图标
-    int         nApkSize;   //程序大小
+    private String strApkName;      //应用程序名
+    private String strPkgName ;     //包名
+    private Drawable    drIcon;     //图标
+    private int   nApkSize;   //程序大小
 
     public void setStrApkName(String strApkName) {
         this.strApkName = strApkName;
