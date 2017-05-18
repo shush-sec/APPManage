@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="所有应用程序"
+        android:text="系统应用程序"
         android:textSize="20sp" />
 
     <!--<RelativeLayout-->
